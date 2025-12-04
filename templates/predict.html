@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Predict Exam Score</title>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --success: #16a34a;
+            --error: #dc2626;
+            --radius: 10px;
+            --shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        /* 📘 Beautiful Education-Themed Background */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+
+            /* Education background */
+            background: 
+                linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
+                url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1400&q=80');
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            background: rgba(255, 255, 255, 0.90); /* Slight transparency */
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(6px); /* Smooth blur effect */
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: var(--radius);
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            font-size: 15px;
+            transition: all 0.25s ease;
+        }
+
+        /* Smooth focus animation */
+        input:focus {
+            border-color: var(--primary);
+            background: white;
+            box-shadow: 0 0 10px rgba(37, 99, 235, 0.35);
+            transform: scale(1.015);
+            outline: none;
+        }
+
+        /* Gradient button */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 22px;
+            background: linear-gradient(90deg, #2563eb, #4f46e5);
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: 0.25s ease-in-out;
+            box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+        }
+
+        button:hover {
+            background: linear-gradient(90deg, #1d4ed8, #4338ca);
+            transform: translateY(-2px);
+        }
+
+        .result, .error {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: var(--radius);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .result {
+            background: #ecfdf5;
+            color: var(--success);
+            border-left: 4px solid var(--success);
+        }
+
+        .error {
+            background: #fef2f2;
+            color: var(--error);
+            border-left: 4px solid var(--error);
+        }
+
+        @media (min-width: 600px) {
+            .row-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+<h2>📚 Exam Score Prediction</h2>
+
+<form method="POST">
+
+    {% for field in input_fields %}
+        <label>{{ field.name.replace('_', ' ').title() }}</label>
+        <input type="text" name="{{ field.name }}" required>
+    {% endfor %}
+
+    <button type="submit">Predict</button>
+</form>
+
+{% if prediction %}
+    <div class="result">
+        Predicted Exam Score: {{ prediction }}
+    </div>
+{% endif %}
+
+{% if error %}
+    <div class="error">
+        Error: {{ error }}
+    </div>
+{% endif %}
+
+</div>
+
+</body>
+</html>
