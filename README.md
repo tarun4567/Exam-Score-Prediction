@@ -73,5 +73,4 @@ Student-Exam-Prediction/
 
 
 
-This project is created for academic and learning purposes.
-Feel free to modify and extend the project for production use.
+
