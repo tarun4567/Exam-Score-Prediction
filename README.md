@@ -72,31 +72,6 @@ Student-Exam-Prediction/
 ├── README.md
 
 
----
-
-## ▶ How to Run This Project
-
-### 1️⃣ Install Requirements
-```bash
-pip install pandas numpy scikit-learn
-2️⃣ Place Dataset
-
-Ensure student.csv exists in the same folder as the script.
-
-3️⃣ Run the Model Training Script
-python main.py
-
-
-After running, your trained .pkl model files will be generated.
-
-🔧 Future Enhancements
-
-🔹 Add Flask / Django web app UI for real-time prediction
-🔹 Hyperparameter tuning (GridSearchCV)
-🔹 Feature importance visualization
-🔹 Support for additional ML algorithms
-
-
 
 This project is created for academic and learning purposes.
 Feel free to modify and extend the project for production use.
