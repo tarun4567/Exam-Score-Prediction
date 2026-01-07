@@ -64,12 +64,12 @@ These files are essential for running prediction with the same dataset structure
 
 Student-Exam-Prediction/
 │
-├── main.py (example script) or this code block
-├── student.csv
-├── reg_model.pkl
-├── feature_names.pkl
-├── label_encoders.pkl
-├── README.md
+main.py (example script) or this code block
+student.csv
+reg_model.pkl
+feature_names.pkl
+label_encoders.pkl
+README.md
 
 
 
