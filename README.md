@@ -64,12 +64,13 @@ These files are essential for running prediction with the same dataset structure
 
 Student-Exam-Prediction/
 │
-main.py (example script) or this code block
-student.csv
-reg_model.pkl
-feature_names.pkl
-label_encoders.pkl
-README.md
+├── main.py                 # Main Python script (prediction logic)
+├── student.csv             # Dataset used for prediction
+├── reg_model.pkl           # Trained regression model
+├── feature_names.pkl       # Feature names used during training
+├── label_encoders.pkl      # Label encoders for categorical data
+└── README.md               # Project documentation
+
 
 
 
